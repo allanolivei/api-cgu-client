@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test CGU API in Client</title>
+</head>
+<body>
+    <button id="request">Request</button>
+    <small>Veja o resultado no console.</small>
+    
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        const url = "";  // Replace with url
+        const key = ""; // Replace with key
+        const config = { headers:{chaveAcesso : key} };
+
+        function request()
+        {
+            axios.get(url, config)
+                .then(function (response) {   
+                    console.log("SUCCESS RESULT: ", response);    
+                })
+                .catch(function (error) { 
+                    console.log("ERROR RESULT: ", error);
+                });
+        }
+
+        document.getElementById("request").addEventListener("click", request);
+
+        request();
+    </script>
+</body>
+</html>
